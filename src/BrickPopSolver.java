@@ -12,8 +12,11 @@ public class BrickPopSolver {
 
 		BufferedImage image = null;
 		try {
-			image = ImageIO.read(new File("C:/Users/Max/Downloads/File_000 (18).png"));
+			image = ImageIO.read(new File(args[0]));
 		} catch (IOException e) {
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.err.println("ERROR: Must run with command-line argument");
+			System.exit(0);
 		}
 
 		for (int i = 0; i < 10; i++) {
